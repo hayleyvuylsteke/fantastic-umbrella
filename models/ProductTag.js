@@ -18,12 +18,20 @@ ProductTag.init(
       //integer, references product model's id
       //update for reerence
       type: DataTypes.INTEGER,
+      references: {
+        model: 'Product',
+        key: 'id'
+      }
       
     },
     tag_id: {
       //integer, references the tag model's id
       //update for reerence
       type: DataTypes.INTEGER,
+      references: {
+        model: 'Tag',
+        key: 'id'
+      }
     }
   },
   {

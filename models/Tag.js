@@ -9,14 +9,14 @@ Tag.init(
     // define columns
     id: {
       //integer, not null, primary key, auto increment
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
     },
     tag_name: {
       //string
-      type: DataType.STRING,
+      type: DataTypes.STRING,
     }
   },
   {
