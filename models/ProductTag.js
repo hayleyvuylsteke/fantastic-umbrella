@@ -19,7 +19,7 @@ ProductTag.init(
       //update for reerence
       type: DataTypes.INTEGER,
       references: {
-        model: 'Product',
+        model: 'product',
         key: 'id'
       }
       
@@ -29,7 +29,7 @@ ProductTag.init(
       //update for reerence
       type: DataTypes.INTEGER,
       references: {
-        model: 'Tag',
+        model: 'tag',
         key: 'id'
       }
     }

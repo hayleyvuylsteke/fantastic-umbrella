@@ -20,7 +20,7 @@ Product.init(
     },
     product_name: {
       //string, no null
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false
     },
     price: {
@@ -45,7 +45,7 @@ Product.init(
       //need to update to reference 
       type: DataTypes.INTEGER,
       references: {
-        model: 'Category',
+        model: 'category',
         key: 'id'
       }
     }
