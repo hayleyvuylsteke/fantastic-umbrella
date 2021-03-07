@@ -7,12 +7,13 @@ router.get('/', (req, res) => {
   // find all categories
   Category.findAll({
     attributes: ['id', 'category_name'],
-    include: [
+    include: [Product]
+    /*[
       {
         model: Product,
-        attributes: ['product_name']
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
       }
-    ]
+    ]*/
   })
   .then(dbCategoryData => res.json(dbCategoryData))
   .catch(err => {
@@ -29,12 +30,14 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: ['id', 'category_name'],
-    include: [
+    include: [Product]
+    
+    /*[
       {
         model: Product,
-        attributes: ['product_name']
-      }
-    ]
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      }*/
+    //]
   })
   .then(dbCategoryData => {
     if (!dbCategoryData) {

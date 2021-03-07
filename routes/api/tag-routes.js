@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
   // find all tags
   Tag.findAll({
     attributes: ['id', 'tag_name'],
-    include: [{
+    include: [{model: Product, through: ProductTag}]
+    
+    /*[{
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
     },
@@ -15,7 +17,7 @@ router.get('/', (req, res) => {
       model: ProductTag,
       attributes: ['id', 'product_tag', 'tag_id']
     }
-  ]
+  ]*/
   })
   .then(dbTagData => res.json(dbTagData))
   .catch(err => {
@@ -32,7 +34,9 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: ['id', 'tag_name'],
-    include: [{
+    include: [{model: Product, through: ProductTag}]
+    
+    /*[{
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
     },
@@ -40,7 +44,7 @@ router.get('/:id', (req, res) => {
       model: ProductTag,
       attributes: ['id', 'product_tag', 'tag_id']
     }
-  ]
+  ]*/
   })
   .then(dbTagData => {
     if (!dbTagData) {
